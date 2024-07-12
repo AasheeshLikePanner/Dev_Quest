@@ -14,7 +14,7 @@ export default function AllSolutions(){
     useEffect(()=>{
         if(problemId){  
             async function getSolutions(){
-                const response = await axios.post(`${process.env.API_PREFIX}/problems/get-solution-sorted`, {problemId:problemId._id})
+                const response = await axios.post(`${process.env.VITE_API_PREFIX}/problems/get-solution-sorted`, {problemId:problemId._id})
                 setSolutions(response.data.data[0].solutionDetail)
             }
             getSolutions();

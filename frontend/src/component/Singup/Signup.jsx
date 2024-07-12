@@ -18,7 +18,7 @@ export default function SignUp(props){
             formData.append('email', data.email);
             formData.append('password', data.password);
             formData.append('avatar', data.avatar[0]); // Append the first file from the avatar field
-            await axios.post(`${process.env.API_PREFIX}/users/register`, formData, {
+            await axios.post(`${process.env.VITE_API_PREFIX}/users/register`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -30,7 +30,7 @@ export default function SignUp(props){
             console.log('Something Went Wrong While registering the User', error);
         }
         try {
-            const response = await axios.post(`${process.env.API_PREFIX}/users/login`, {
+            const response = await axios.post(`${process.env.VITE_API_PREFIX}/users/login`, {
                 email: data.email,
                 password: data.password
             }, {withCredentials:'include'});

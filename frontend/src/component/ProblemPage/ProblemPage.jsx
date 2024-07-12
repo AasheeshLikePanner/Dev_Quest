@@ -41,8 +41,8 @@ export default function ProblemPage(){
     const HandleCommentSubmit = async (formData) => {
         if(formData.comment !== ""){
             try {
-                const response = await axios.post(`${process.env.API_PREFIX}/comments/create-comment` ,{content:formData.comment}, {withCredentials:'include'})
-                const comments = await axios.post(`${process.env.API_PREFIX}/problems/add-commentin-problem`, {problemId:problemState._id, commentId:response.data.data._id}, {withCredentials:'include'})
+                const response = await axios.post(`${process.env.VITE_API_PREFIX}/comments/create-comment` ,{content:formData.comment}, {withCredentials:'include'})
+                const comments = await axios.post(`${process.env.VITE_API_PREFIX}/problems/add-commentin-problem`, {problemId:problemState._id, commentId:response.data.data._id}, {withCredentials:'include'})
                 setexternalComments(externalComments + 1);
                 toast.success("Yours Thought Added Successfully!!!")
             } catch (error) {  

@@ -23,9 +23,9 @@ export default function SolutionSubmitPage(props){
             }
             try {
                 
-                const createdSolutoin = await axios.post(`${process.env.API_PREFIX}/solutions/create-solution`, {link:data.link, content:data.content, title:data.title}, {withCredentials:"include"})
-                const AddedSolutions = await axios.post(`${process.env.API_PREFIX}/problems/add-solution`, {problemId, solutionId:createdSolutoin.data.data._id}, {withCredentials:'include'})
-                const addInUserSubmission = await axios.post(`${process.env.API_PREFIX}/users/add-solution-to-user-submissions`, {solutionId:createdSolutoin.data.data._id}, {withCredentials:'include'})
+                const createdSolutoin = await axios.post(`${process.env.VITE_API_PREFIX}/solutions/create-solution`, {link:data.link, content:data.content, title:data.title}, {withCredentials:"include"})
+                const AddedSolutions = await axios.post(`${process.env.VITE_API_PREFIX}/problems/add-solution`, {problemId, solutionId:createdSolutoin.data.data._id}, {withCredentials:'include'})
+                const addInUserSubmission = await axios.post(`${process.env.VITE_API_PREFIX}/users/add-solution-to-user-submissions`, {solutionId:createdSolutoin.data.data._id}, {withCredentials:'include'})
                 dispatch(changeSumbissionCount())
                 props.closepage();
             } catch (error) {

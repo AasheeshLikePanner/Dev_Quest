@@ -14,7 +14,7 @@ export default function UserSolutionArchive(){
         try {
             
             async function getUserSubmission(){
-                const fetchedUserSubmission = await axios.get(`${process.env.API_PREFIX}/users/get-user-submissions`, {withCredentials:'include'})
+                const fetchedUserSubmission = await axios.get(`${process.env.VITE_API_PREFIX}/users/get-user-submissions`, {withCredentials:'include'})
                 if (fetchedUserSubmission) {
                     setSubmission(fetchedUserSubmission.data.data[0].solutions)
                 }

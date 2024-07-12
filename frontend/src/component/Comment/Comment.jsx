@@ -15,7 +15,7 @@ export default function Comment(data){
         if (!isLiked) {
             try {
                 console.log("Inside the like function");
-                const response = await axios.post(`${process.env.API_PREFIX}/likes/like-item`, {
+                const response = await axios.post(`${process.env.VITE_API_PREFIX}/likes/like-item`, {
                     itemId: data.data._id,
                     itemType: "Comment",
                     userId: data.data.user_Detail[0]._id

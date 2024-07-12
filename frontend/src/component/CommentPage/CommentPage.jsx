@@ -20,8 +20,8 @@ export default function CommentPage(){
         if(formData.comment !== ""){
             try {
 
-                const response = await axios.post(`${process.env.API_PREFIX}/comments/create-comment` ,{content:formData.comment}, {withCredentials:'include'})
-                const comments = await axios.post(`${process.env.API_PREFIX}/comments/add-comment`, { commentId:data.data._id,AddcommentId:response.data.data._id}, {withCredentials:'include'})
+                const response = await axios.post(`${process.env.VITE_API_PREFIX}/comments/create-comment` ,{content:formData.comment}, {withCredentials:'include'})
+                const comments = await axios.post(`${process.env.VITE_API_PREFIX}/comments/add-comment`, { commentId:data.data._id,AddcommentId:response.data.data._id}, {withCredentials:'include'})
                 setexternalComments(externalComments + 1);
                 toast.success("Yours Thought Added Successfully!!!")
             } catch (error) {   

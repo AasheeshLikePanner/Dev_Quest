@@ -9,20 +9,20 @@ export default function AllComments(data){
     useEffect(()=>{
         if(data.type === "Solution"){
             async function getComments(){
-                const response = await axios.post(`${process.env.API_PREFIX}/solutions/get-allcomment-ofsolution`, {solutionId:data.data._id})
+                const response = await axios.post(`${process.env.VITE_API_PREFIX}/solutions/get-allcomment-ofsolution`, {solutionId:data.data._id})
                 SetComments(response.data.data[0].comment_Detail)
             }
             getComments() 
         }else if(data.type === "Problem"){
             async function getComments(){
-                const response = await axios.post(`${process.env.API_PREFIX}/problems/get-allcomment-ofproblem`,{problemId:data.data._id})
+                const response = await axios.post(`${process.env.VITE_API_PREFIX}/problems/get-allcomment-ofproblem`,{problemId:data.data._id})
                 SetComments(response.data.data[0].comment_Detail)
             }
             getComments();
         }   
         else{
             async function getComment(){
-                const response = await axios.post(`${process.env.API_PREFIX}/comments/get-allcomment-ofcomment`, {commentId:data.data.data._id})
+                const response = await axios.post(`${process.env.VITE_API_PREFIX}/comments/get-allcomment-ofcomment`, {commentId:data.data.data._id})
                 SetComments(response.data.data[0].comment_Detail)
 
             }       

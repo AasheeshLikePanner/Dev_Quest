@@ -15,7 +15,7 @@ export default function Login(props) {
 
   const handleLogin = async (data) => {
     try {
-      const response = await axios.post(`${process.env.API_PREFIX}/users/login`, {
+      const response = await axios.post(`${process.env.VITE_API_PREFIX}/users/login`, {
         email: data.email,
         password: data.password
       }, {withCredentials:'include'});

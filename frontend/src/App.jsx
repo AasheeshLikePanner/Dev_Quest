@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
         try {
-          const response = await axios.get(`${process.env.API_PREFIX}/users/current-user`, {
+          const response = await axios.get(`${process.env.VITE_API_PREFIX}/users/current-user`, {
             withCredentials: true
             });
             dispatch(login(response.data.data));

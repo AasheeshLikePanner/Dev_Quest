@@ -44,7 +44,7 @@ export default function Problem(){
   
       const handleReset = async () => {
 
-        const responce = await axios.get(`${process.env.API_PREFIX}/problems/create-problem`)
+        const responce = await axios.get(`${process.env.VITE_API_PREFIX}/problems/create-problem`)
         setTitle(responce.data.data.title)
         setDescription(responce.data.data.content);
         dispatch(createProblem(responce.data.data))
@@ -55,8 +55,8 @@ export default function Problem(){
       
       const handleWinner = async () => {
         try {
-          const mostLikeSolution = await axios.post(`${process.env.API_PREFIX}/problems/get-most-like-solution`, {problemId})
-          const updatingUser = await axios.post(`${process.env.API_PREFIX}/users/increase-user-wins`, {userId:mostLikeSolution.data.data[0].userId})
+          const mostLikeSolution = await axios.post(`${process.env.VITE_API_PREFIX}/problems/get-most-like-solution`, {problemId})
+          const updatingUser = await axios.post(`${process.env.VITE_API_PREFIX}/users/increase-user-wins`, {userId:mostLikeSolution.data.data[0].userId})
         } catch (error) {
           console.log("Error While Updating UserWin", error); 
         }
@@ -82,7 +82,7 @@ export default function Problem(){
 
     useEffect(()=>{
       async function getProblem(){
-        const response = await axios.post(`${process.env.API_PREFIX}/problems/get-problem`,{problemId})
+        const response = await axios.post(`${process.env.VITE_API_PREFIX}/problems/get-problem`,{problemId})
         setTitle(response.data.data.title.replace("Title", 'Quest'))
         setDescription(response.data.data.content)
         setProblemState(response.data.data)
