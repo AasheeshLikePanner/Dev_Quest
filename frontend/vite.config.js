@@ -9,11 +9,5 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-  },
-  define: {
-    "process.env": {
-      VITE_API_PREFIX:"https://dev-quest-ecru.vercel.app",
-
-    },
-  },
+  }
 });
