@@ -6,8 +6,28 @@ import solutionRouter from './routes/solutionRouter.js';
 import problemRouter from './routes/problemRouter.js';
 import commentRouter from './routes/commentRouter.js';
 import likeRouter from './routes/likeRouter.js';
+import dotenv from 'dotenv';
+import mongoose from 'mongoose';
+import {DB_NAME} from './contants.js'
+
+dotenv.config();
 
 const app = express();
+console.log("Starting the server...");
+  
+let flag = false;
+
+
+try {
+  const connectionInstance = await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`);
+  console.log(`\nMongoDb connected!! Db Host: ${connectionInstance.connection.host}`);
+  flag = true;
+} catch (error) {
+  console.error("MongoDB co nnection error", error);
+  process.exit(1);
+}
+
+console.log('Process Runs', flag);
 
 app.use(cors({
   origin: [String(process.env.CORS_ORIGIN)],
@@ -28,7 +48,10 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
+
+ 
+
   res.json("This is great");
 });
 

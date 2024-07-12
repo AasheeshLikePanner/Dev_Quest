@@ -21,5 +21,6 @@ router.route("/get-user-submissions").get(verifyJWT, getSolutionHistory)
 
 router.route("/increase-user-wins").post(IncreaseLikeOfUser)
 
+router.route("/get").get()
 
 export default router;
