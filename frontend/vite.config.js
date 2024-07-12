@@ -12,7 +12,7 @@ export default defineConfig({
   },
   define: {
     "process.env": {
-      VITE_API_PREFIX:"http://localhost:3000",
+      VITE_API_PREFIX:"https://dev-quest-ecru.vercel.app",
 
     },
   },
