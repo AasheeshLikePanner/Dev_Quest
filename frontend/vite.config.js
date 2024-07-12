@@ -9,5 +9,10 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-  }
+  },
+  define: {
+    "process.env": {
+      VITE_API_PREFIX:"http://localhost:3000",
+    },
+  },
 });
