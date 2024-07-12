@@ -30,7 +30,7 @@ try {
 console.log('Process Runs', flag);
 
 app.use(cors({
-  origin: [String(process.env.CORS_ORIGIN)],
+  origin: [process.env.CORS_ORIGIN],
   methods: ["POST", "GET"],
   credentials: true,
 }));
