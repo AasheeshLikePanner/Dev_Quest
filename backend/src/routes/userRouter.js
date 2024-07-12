@@ -21,6 +21,8 @@ router.route("/get-user-submissions").get(verifyJWT, getSolutionHistory)
 
 router.route("/increase-user-wins").post(IncreaseLikeOfUser)
 
-router.route("/get").get()
+router.route("/get").get((req, res)=>{
+    res.json('This is callable')
+})
 
 export default router;
