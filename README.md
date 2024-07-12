@@ -22,7 +22,7 @@ DevQuest is a unique platform where developers can solve daily real-world proble
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/devquest.git
+    git clone https://github.com/AasheeshLikePanner/Dev_Quest
     cd devquest
     ```
 
