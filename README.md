@@ -102,6 +102,4 @@ DevQuest is a unique platform where developers can solve daily real-world proble
 5. Push to the branch (`git push origin feature-branch`).
 6. Open a Pull Request.
 
-## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
