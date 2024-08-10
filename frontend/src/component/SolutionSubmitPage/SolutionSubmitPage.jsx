@@ -16,11 +16,6 @@ export default function SolutionSubmitPage(props){
 
     const handleSolutionSubmit = async (data) => {
         if(data.content !== "" && data.title !== "" && data.link !== ""){
-            const mutedWords = ["porn",'prn','fuck','nude','sex','girl']
-            if (mutedWords.some((words) => data.title.includes(words))) {
-                
-                return;    
-            }
             try {
                 
                 const createdSolutoin = await axios.post(`${process.env.API_PREFIX}/solutions/create-solution`, {link:data.link, content:data.content, title:data.title}, {withCredentials:"include"})
