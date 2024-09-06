@@ -3,10 +3,8 @@
 DevQuest is a unique platform where developers can solve daily real-world problems by creating web applications. This platform provides practical challenges to sharpen your coding skills and allows you to share your solutions with the community.
 
 ## Video Introduction
+https://github.com/user-attachments/assets/0989dc72-22c0-44ca-8b25-d8d77e5d7de5
 
-<a href="https://github.com/user-attachments/assets/5871f45e-ba1f-40c0-ad35-71ef161261f0" target="_blank">
-  Watch the video
-</a>
 
 ## Features
 
